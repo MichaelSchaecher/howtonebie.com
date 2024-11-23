@@ -1,0 +1,15 @@
+# Common ignore for hugo development using VSCode with npm installed.
+
+# Hugo output directory
+public/
+
+# Hugo cache directory
+resources/
+
+# Node modules
+node_modules/
+
+# Hugo build files
+.hugo_build.lock
+
+content/*

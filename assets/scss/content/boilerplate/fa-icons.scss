@@ -1,0 +1,72 @@
+// Use colors set for the social icons in assets/scss/util/style/colors.scss
+
+@use "../utilities/fonts" as *;
+@use "../utilities/mixins-functions" as *;
+@use "../utilities/colors" as *;
+
+// Social icons don't have to standout with color, the icon itself is enough.
+.fa-brands,
+.fa-solid,
+.fa-regular {
+  color: $fa-color;
+}
+
+.fa-copyright {
+  color: $fg-color;
+}
+
+// // Set color for general fa-icons based on usage.
+// .fa-file,
+// .fa-file-text,
+// .fa-file-pdf-o,
+// .fa-file-pdf,
+// .fa-file-word-o,
+// .fa-file-word,
+// .fa-file-excel-o,
+// .fa-file-excel,
+// .fa-file-powerpoint-o,
+// .fa-file-powerpoint,
+// .fa-file-image-o,
+// .fa-file-image {
+//   color: $fa-file;
+// }
+
+// .fa-book-open {
+//   color: $fa-book-open;
+//   margin-right: rem(4);
+// }
+
+// .fa-calendar {
+//   color: $fa-calendar;
+// }
+
+// .fa-clock-o,
+// .fa-clock {
+//   color: $fa-clock;
+// }
+
+// .fa-tag {
+//   color: $fa-tag;
+// }
+
+// .fa-user {
+//   color: $fa-user;
+// }
+
+// .fa-folder,
+// .fa-folder-open {
+//   color: $fa-folder;
+// }
+
+// .fa-folder-open {
+//   color: $fa-folder-open;
+// }
+
+// .fa-copyright {
+//   vertical-align: top;
+//   font-size: rem(12);
+//   line-height: rem(16);
+//   padding-top: rem(8);
+//   color: $fg-color;
+//   margin: 0;
+// }

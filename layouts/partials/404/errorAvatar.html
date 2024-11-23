@@ -1,0 +1,10 @@
+{{ with .Site.Params.images.error }}
+  <img src="{{ . | relURL }}" alt="404" class="errorAvatar" />
+{{ else }}
+  <style>
+    .errorMessage {
+      font-size: 10rem;
+    }
+  </style>
+  <h1 class="errorMessage">404</h1>
+{{ end }}

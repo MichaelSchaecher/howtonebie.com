@@ -1,0 +1,26 @@
+<h3 class="box-title">Quote of the day</h2>
+<blockquote class="quotes"></blockquote>
+<div class="authorContainer">
+  <span class="quoteAuthor"></span>
+</div>
+<div class="fieldContainer">
+  {{/*  <span class="dateQuoted"></span>  */}}
+  <span class="authorField"></span>
+</div>
+{{ if .Site.IsServer }}
+  {{ $quotes := resources.Get "js/quotes.js" }}
+  {{ $jenQuotes := resources.Get "js/jenQuotes.js" }}
+  <script src="{{ $quotes.RelPermalink }}"></script>
+  <script src="{{ $jenQuotes.RelPermalink }}"></script>
+{{ else }}
+  {{ $quotes := resources.Get "js/quotes.js" | minify | fingerprint }}
+  {{ $jenQuotes := resources.Get "js/jenQuotes.js" | minify | fingerprint }}
+  <script
+    src="{{ $quotes.RelPermalink }}"
+    integrity="{{ $quotes.Data.Integrity }}"
+  ></script>
+  <script
+    src="{{ $jenQuotes.RelPermalink }}"
+    integrity="{{ $jenQuotes.Data.Integrity }}"
+  ></script>
+{{ end }}

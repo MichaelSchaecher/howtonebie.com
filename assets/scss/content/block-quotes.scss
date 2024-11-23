@@ -1,0 +1,17 @@
+@use "utilities/fonts" as *;
+@use "utilities/mixins-functions" as *;
+@use "utilities/colors" as *;
+
+blockquote {
+  border-left: rem(3) solid $accent-color;
+  padding: 0 rem(24);
+  line-height: rem(22);
+  font-weight: 400;
+  font-style: italic;
+  margin: rem(32);
+
+  @include min {
+    margin: rem(16);
+    padding: 0 rem(12);
+  }
+}

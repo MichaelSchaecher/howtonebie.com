@@ -1,0 +1,29 @@
+{{ define "title" }}
+  {{ title (i18n (lower .Title)) | default .Title }} ·
+  {{ .Site.Title }}
+{{ end }}
+{{ define "content" }}
+  <section class="container lists">
+    <header class="list-header">
+      <!-- Only use the featured images if on is set. -->
+      {{ with .Params.featuredImage }}
+        <img
+          class="featuredImage"
+          src="{{ . | relURL }}"
+          alt="Featured image"
+        />
+      {{ end }}
+
+
+      <h1 class="list-title">
+        {{ title (i18n (lower .Title)) | default .Title }}
+      </h1>
+    </header>
+    {{ .Content }}
+    <ul class="blogging">
+      {{ partial "li.html" . }}
+    </ul>
+
+    {{ partial "pagination.html" . }}
+  </section>
+{{ end }}

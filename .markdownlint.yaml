@@ -1,0 +1,10 @@
+# Tell markdownlint to ignore the following rules
+
+# MD013 - Line length
+MD013: false
+
+# MD033 - Inline HTML
+MD033: false
+
+# MD034 - Bare URL used
+MD034: false

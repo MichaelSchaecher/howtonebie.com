@@ -1,0 +1,38 @@
+// Simple Dark by Michael Schaecher is licensed under the MIT License.
+
+@use "utilities/fonts" as *;
+@use "utilities/mixins-functions" as *;
+@use "utilities/colors" as *;
+
+// Tags and categories should be inline-block elements to allow for link animations.
+
+.taxonomy-links {
+  padding-top: rem(16);
+}
+
+.tax {
+  margin: rem(16) 0;
+  font-size: rem(16);
+  font-weight: 600;
+  color: $fg-color;
+
+  .taxes {
+    display: inline-block;
+    margin: 0;
+
+    // Set padding to 24px to match the padding of the post list.
+    padding-left: rem(24);
+
+    list-style: none;
+
+    .taxing {
+      .taxlin {
+        color: $alt-fg-color;
+        &:hover,
+        &:focus {
+          color: $link-color;
+        }
+      }
+    }
+  }
+}

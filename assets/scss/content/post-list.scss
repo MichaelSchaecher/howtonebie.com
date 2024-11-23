@@ -1,0 +1,149 @@
+// This SCSS file is used for the body tag and some base styles for the site.
+
+// Path: assets/scss/base/body.scss
+// Compare this snippet from themes/hugo-coder/assets/scss/_base.scss:
+
+// Inherit box-sizing from html
+
+@use "utilities/fonts" as *;
+@use "utilities/mixins-functions" as *;
+@use "utilities/colors" as *;
+
+.list-header {
+  margin: rem(48) 0;
+  font-size: rem(24);
+  // color: $alt-accent-color;
+
+  @include min {
+    font-size: rem(20);
+    line-height: rem(24);
+  }
+}
+
+.blogging {
+  margin: 0 rem(48);
+  list-style: none;
+  padding: 0;
+  // border-top: 1px solid $alt-fg-color;
+
+  // Make the list scrollable and set the min-height to 256px.
+  overflow-y: auto;
+  height: rem(300);
+
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+
+  @include min {
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin-bottom: rem(10);
+    font-size: rem(18);
+
+    .post-list {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+
+      .date {
+        text-align: left;
+      }
+
+      .title {
+        text-align: left;
+        color: $fg-color;
+        font-family: $font-family;
+        font-weight: 600;
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+          color: $link-color;
+        }
+      }
+
+      @include min {
+        display: flex;
+        flex-direction: column;
+
+        .date {
+          text-align: center;
+          margin: 0;
+        }
+
+        .title {
+          text-align: center;
+          font-size: rem(20);
+        }
+      }
+    }
+  }
+}
+
+// This is a taxonomy list and needs to be styled differently from the post list.
+// Use a button instead of a link for the taxonomy list and buttons need to be
+// horizontally centered.
+.taxonomy {
+  list-style: none;
+  margin: rem(48) auto;
+  padding: 0;
+
+  // Center the list.
+  text-align: center;
+
+  li {
+    margin-left: rem(10);
+    display: inline-block;
+    position: relative;
+
+    button {
+      margin-bottom: rem(16);
+      font-size: rem(18);
+
+      color: $fg-color;
+      font-weight: 700;
+      border: none;
+      border-radius: rem(4);
+      background-color: $bg-color;
+
+      width: rem(192);
+      height: rem(48);
+
+      transition: all 0.25s ease-in-out;
+
+      &:hover,
+      &:focus {
+        background-color: $link-color;
+        transform: scale(1.05);
+        cursor: pointer;
+
+        a {
+          color: $fg-color;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+ul:not(.pagination, .taxonomy) {
+  li {
+    @include min {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: rem(16);
+
+      .date {
+        text-align: center;
+        margin: 0;
+      }
+
+      .title {
+        text-align: center;
+        font-size: rem(20);
+      }
+    }
+  }
+}

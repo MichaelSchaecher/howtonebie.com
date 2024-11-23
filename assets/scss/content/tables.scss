@@ -1,0 +1,55 @@
+// Simple-Dark by Michael Schaecher is licensed under the MIT License.
+
+// Path: content/tables.scss
+
+@use "utilities/fonts" as *;
+@use "utilities/mixins-functions" as *;
+@use "utilities/colors" as *;
+
+table {
+  display: table;
+  border-collapse: collapse;
+  border: 2px solid $alt-fg-color;
+  width: 100%;
+  font-size: medium;
+  white-space: wrap;
+  line-height: 1.15;
+
+  @include min {
+    width: auto;
+
+    // Center the table on small screens.
+    margin-left: auto;
+    margin-right: auto;
+
+    // Make the table scrollable on small screens
+    display: block;
+    overflow-x: auto;
+  }
+
+  td,
+  th {
+    text-align: left;
+    padding: rem(8);
+  }
+
+  // Make the table header sticky.
+  th {
+    // position: sticky;
+    // top: 0;
+    background-color: $alt-bg-color;
+
+    // Keep the table header from overflowing the container on small screens by resetting
+    // the top position.
+    @include min {
+      top: rem(52);
+
+      // Reset the position to static.
+      position: static;
+    }
+  }
+
+  td {
+    border: rem(2) solid $alt-fg-color;
+  }
+}

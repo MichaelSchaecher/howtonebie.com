@@ -1,0 +1,144 @@
+/**
+ * SCSS file for setting the homepage of the website.
+ */
+
+@use "utilities/fonts" as *;
+@use "utilities/mixins-functions" as *;
+@use "utilities/colors" as *;
+
+.home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  // Set the row size to so the the second is 1/3 of the first.
+  .home-info {
+    flex: 2;
+    padding-right: rem(32);
+  }
+
+  .quote-box {
+    flex: 1;
+
+    // Center the content without over riding the flex property of the parent.
+    margin: auto;
+
+    background-color: $alt-bg-color;
+    border-radius: rem(8);
+    box-shadow: rem(-4) rem(-4) rem(4) $alt-darker-color;
+    text-align: center;
+    height: calc(100% + 15%);
+  }
+
+  @include min {
+    flex-direction: column;
+  }
+}
+
+.home .quote-box .quotes {
+  border: none;
+  padding: 0;
+  margin: rem(8);
+  text-align: center;
+  text-wrap: wrap;
+
+  &::before,
+  &::after {
+    content: '"';
+  }
+
+  @include min {
+    font-size: rem(18);
+  }
+}
+
+.home .quote-box .box-title {
+  margin: rem(8) auto rem(24);
+  width: rem(192);
+  border-bottom: rem(4) solid $accent-color;
+  text-align: center;
+}
+.home .quote-box i {
+  margin-bottom: rem(8);
+}
+
+.home .quote-box .authorContainer {
+  // float: left;
+  margin-right: rem(8);
+  margin-bottom: rem(8);
+
+  &::before {
+    content: "- ";
+    font-weight: 900;
+  }
+
+  &::after {
+    content: " -";
+    font-weight: 900;
+  }
+
+  i {
+    margin-right: rem(4);
+  }
+
+  @include min {
+    font-size: rem(18);
+  }
+}
+
+.home .quote-box .fieldContainer {
+  margin: rem(8);
+  color: $accent-color;
+}
+
+.home .home-info .avatar {
+  width: 100%;
+}
+
+.centered .description {
+  font-size: rem(24);
+  text-decoration: none;
+  color: $fg-color;
+  margin-top: 0;
+  text-align: center;
+
+  @include min {
+    font-size: rem(20);
+    padding: rem(20) 0;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.centered .social-list {
+  text-align: center;
+  padding-inline-start: 0;
+
+  .socials {
+    display: inline;
+
+    .icons {
+      margin: 0;
+      font-size: rem(24);
+      padding: 0 rem(8);
+
+      i {
+        color: $fg-color;
+
+        &:hover {
+          color: $link-color;
+        }
+      }
+    }
+
+    @include min {
+      padding: rem(20) 0;
+      margin: 0;
+      .icons {
+        i {
+          font-size: rem(20);
+        }
+      }
+    }
+  }
+}

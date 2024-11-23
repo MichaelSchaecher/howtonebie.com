@@ -1,0 +1,63 @@
+// Colors
+$bg-color: rgb(35, 35, 35) !default;
+$fg-color: rgb(210, 210, 210) !default;
+
+// Alt colors
+$alt-bg-color: $bg-color !default;
+$alt-fg-color: rgb(75, 75, 75) !default;
+
+$alt-darker-color: rgb(55, 55, 55) !default;
+
+// Accent colors (used for links, buttons and decorative elements)
+$link-color: rgb(95, 15, 175) !default;
+$accent-color: $link-color !default;
+$alt-accent-color: rgb(200, 75, 100) !default;
+$alt-link-color: $alt-fg-color !default;
+$button-bg-color: $link-color !default; // Same as link-color by default
+$error-text-color: rgb(255, 0, 0) !default;
+
+$title-color: rgb(175, 145, 175) !default;
+$alt-title-color: rgb(145, 175, 145) !default;
+
+$tab-border-color: $alt-bg-color !default;
+$tab-bg-color: $alt-bg-color !default;
+
+// Notice colors
+$fg-color-notice-note-icon: rgb(95, 55, 180) !default;
+$bg-color-notice-note-title: rgba(105, 60, 180, 0.1) !default;
+$bg-color-notice-note-content: rgba(125, 90, 195, 0.1) !default;
+
+$fg-color-notice-tip-icon: rgb(0, 140, 125) !default;
+$bg-color-notice-tip-title: rgba(0, 150, 135, 0.1) !default;
+$bg-color-notice-tip-content: rgba(40, 165, 155, 0.1) !default;
+
+$fg-color-notice-example-icon: rgb(110, 75, 65) !default;
+$bg-color-notice-example-title: rgba(120, 85, 70, 0.1) !default;
+$bg-color-notice-example-content: rgba(140, 110, 100, 0.1) !default;
+
+$fg-color-notice-question-icon: rgb(125, 180, 65) !default;
+$bg-color-notice-question-title: rgba(140, 195, 75, 0.1) !default;
+$bg-color-notice-question-content: rgba(150, 205, 100, 0.1) !default;
+
+$fg-color-notice-info-icon: rgb(30, 135, 230) !default;
+$bg-color-notice-info-title: rgba(35, 150, 245, 0.1) !default;
+$bg-color-notice-info-content: rgba(65, 165, 245, 0.1) !default;
+
+$fg-color-notice-warning-icon: rgb(255, 180, 0) !default;
+$bg-color-notice-warning-title: rgba(255, 195, 10, 0.1) !default;
+$bg-color-notice-warning-content: rgba(255, 200, 40, 0.1) !default;
+
+$fg-color-notice-error-icon: rgb(230, 55, 55) !default;
+$bg-color-notice-error-title: rgba(245, 65, 55, 0.1) !default;
+$bg-color-notice-error-content: rgba(240, 85, 80, 0.1) !default;
+
+// Social and networking icons colors, use the same colors as the official
+// icons from the social networks. Only the most popular ones are included.
+$fa-color: rgb(120, 175, 180) !default;
+
+// Code colors
+$inline-bg-color: rgb(70, 70, 70) !default;
+$inline-fg-color: rgb(230, 240, 40) !default;
+
+$chroma-bg-color: $alt-bg-color !default;
+$chroma-fg-color: $fg-color !default;

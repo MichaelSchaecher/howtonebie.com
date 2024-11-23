@@ -1,0 +1,35 @@
+@use "utilities/fonts" as *;
+@use "utilities/mixins-functions" as *;
+@use "utilities/colors" as *;
+
+// Animate the internal and external links for the post.
+.internal-link,
+.external-link {
+  color: $link-color;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+
+  .fa-link-slash,
+  .fa-link {
+    font-size: rem(8);
+    line-height: rem(16);
+    vertical-align: top;
+    margin: 0;
+    display: inline;
+    color: $alt-fg-color;
+  }
+
+  &:hover,
+  &:focus {
+    color: $link-color;
+
+    // animate with adding shadow to the link.
+    text-shadow: 0 0 rem(4) $link-color;
+
+    .fa-link-slash,
+    .fa-link {
+      color: $link-color;
+      text-shadow: 0 0 rem(4) $link-color;
+    }
+  }
+}

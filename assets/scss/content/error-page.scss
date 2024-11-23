@@ -1,0 +1,61 @@
+// This SCSS file is used for styling the components of the error page.
+
+@use "utilities/fonts" as *;
+@use "utilities/mixins-functions" as *;
+@use "utilities/colors" as *;
+
+.notFound {
+  display: flex;
+  flex-direction: row;
+  height: rem(480);
+  // margin: rem(84) auto 0;
+
+  @include min {
+    flex-direction: column;
+    height: auto;
+    margin: auto;
+  }
+
+  #errorAvatar,
+  .errorText {
+    flex: 1;
+    margin: auto;
+    max-width: 50%;
+    height: auto;
+    text-align: center;
+
+    @include min {
+      max-width: 100%;
+      margin: auto;
+    }
+  }
+
+  p {
+    font-style: italic;
+    text-align: center;
+  }
+
+  .errorMessage {
+    font-size: rem(256);
+    font-weight: bold;
+    margin: rem(16) 0;
+
+    font-style: italic;
+    color: red;
+
+    @include min {
+      font-size: rem(128);
+    }
+  }
+
+  a {
+    &:active,
+    &:hover {
+      color: $link-color;
+    }
+  }
+
+  h2 {
+    color: $error-text-color;
+  }
+}

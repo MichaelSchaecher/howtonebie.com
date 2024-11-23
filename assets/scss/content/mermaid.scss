@@ -1,0 +1,9 @@
+@use "utilities/colors" as *;
+@use "utilities/fonts" as *;
+@use "utilities/mixins-functions" as *;
+
+.mermaid {
+  display: flex;
+  justify-content: left;
+  margin: rem(24);
+}

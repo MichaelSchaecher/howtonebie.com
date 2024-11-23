@@ -1,0 +1,23 @@
+{
+  "devDependencies": {
+    "prettier": "^3.0.3",
+    "prettier-plugin-go-template": "^0.0.15"
+  },
+  "name": "website",
+  "description": "Statis website using Hugo for backend framework.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichaelSchaecher/website.git"
+  },
+  "author": "Michael Schaecher",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MichaelSchaecher/website/issues"
+  },
+  "homepage": "https://github.com/MichaelSchaecher/website#readme"
+}

@@ -1,0 +1,138 @@
+baseURL: "/"
+title: Home
+languageCode: en
+defaultContentLanguage: en
+paginate: 10
+
+enableEmoji: true
+
+# Enable Disqus comments
+disqusShortname: blackstewie-com
+
+module:
+  hugoVersion:
+    extended: true
+    min: 0.119.0
+    max: 0.120.4
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  tableOfContents:
+    endLevel: 4
+    ordered: true
+    startLevel: 2
+  highlight:
+    noClasses: false
+
+params:
+  author: Michael Schaecher
+  description: "Sharing my thoughts about computers, programming, home audio/video and some gaming."
+  keywords: blog, developer, personal
+
+  license:
+    type: MIT
+    url: /license
+
+  # Set the variables for enabling giscus comments
+  #giscus:
+  # repo: MichaelSchaecher/website
+  # repo_id: R_kgDOKa5WjQ
+  # category: General
+  # categoryID: DIC_kwDOKa5Wjc4Ca5ud
+  # mapping: url
+  # strict: 0
+  # reactionsEnabled: 1
+  # emitMetadata: 0
+  # inputPosition: top
+  # theme: purple_dark
+  # lang: en
+  #crossorigin="anonymous"
+
+  # Set the variables for enabling utterances comments
+
+  # Set an image to be used as part of the listing of blogs and posts.
+  images:
+    avatar: /images/logo.svg
+    # favicon:
+    # favicon_32:
+    # favicon_16:
+    # apple_touch:
+    # android_192:
+    # android_512:
+
+    # Use custom image for 404 page. Useful
+    error: /images/404-error.png
+
+  dateFormat: January 2, 2006
+  since: 2023
+
+  scrollPost: true
+
+  # Right To Left, shift content direction for languages such as Arabic
+  # For now this is not supported.
+  # rtl: false
+
+  # Hide the toggle button, along with the associated vertical divider
+  fontAwesomeCDN: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.css
+
+  # Series see also post count
+  maxSeeAlsoItems: 5
+  # Custom CSS, file path is relative to Hugo's asset folder (default: {your project root}/assets)
+  customSCSS:
+
+  # Custom JS
+  customJS:
+
+  # Custom remote JS files
+  customRemoteJS:
+
+  #csp:
+  #  childsrc: [self]
+  #  fontsrc: [self, https://fonts.gstatic.com, https://cdn.jsdelivr.net/]
+  #  formaction: [self]
+  #  framesrc: [self, https://www.youtube.com]
+  #  imgsrc: [self]
+  #  objectsrc: [none]
+  #  stylesrc: [self,unsafe-inline,https://fonts.googleapis.com/,https://cdn.jsdelivr.net/]
+
+  #scriptsrc: [self,unsafe-inline,https://www.google-analytics.com,https://cdn.jsdelivr.net/]
+
+  #prefetchsrc: [self]
+  # connect-src directive – defines valid targets for to XMLHttpRequest (AJAX), WebSockets or EventSource
+  #connectsrc: [self,https://www.google-analytics.com]
+
+  social:
+    - name: github
+      icon: fa-brands fa-github
+      weight: 1
+      url: https://github.com/MichaelSchaecher/
+    - name: RSS
+      icon: fa-solid fa-rss
+      weight: 2
+      url: ./index.xml
+      rel: alternate
+      type: application/rss+xml
+
+taxonomies:
+  category: categories
+  series: series
+  tag: tags
+  author: authors
+
+languages:
+  en:
+    languageName: us
+
+menu:
+  main:
+    - name: Posts
+      weight: 1
+      url: /posts/
+    - name: Projects
+      weight: 2
+      url: projects/
+    - name: About
+      weight: 3
+      url: /about/

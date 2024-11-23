@@ -1,0 +1,178 @@
+// Simple-Dark by Michael Schaecher is licensed under the MIT License.
+
+@use "utilities/fonts" as *;
+@use "utilities/mixins-functions" as *;
+@use "utilities/colors" as *;
+
+.rowLeft {
+  flex-direction: row;
+}
+
+.rowRight {
+  flex-direction: row-reverse;
+}
+
+.rowLeft,
+.rowRight {
+  display: flex;
+  justify-content: space-between;
+  margin-top: rem(96);
+  margin-bottom: rem(16);
+
+  .marginLeft,
+  .marginRight,
+  .imageLeft,
+  .imageRight {
+    max-width: 50%;
+    height: auto;
+  }
+
+  .marginLeft h2,
+  .marginRight h2 {
+    font-size: rem(32);
+    margin: 0 auto rem(16);
+
+    a {
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+
+      &:hover,
+      &:focus {
+        color: $link-color;
+        text-shadow: 0 0 rem(4) $link-color;
+      }
+    }
+  }
+
+  .marginRight h2 {
+    text-align: right;
+  }
+
+  .marginLeft ul,
+  .marginRight ul {
+    font-size: rem(16);
+    font-style: italic;
+    max-width: rem(480);
+    margin: 0 rem(16) rem(16);
+    border: none;
+    background-color: $alt-bg-color;
+    border-radius: rem(8);
+    box-shadow: rem(-4) rem(-4) rem(4) $alt-darker-color;
+    padding: rem(8) rem(24);
+
+    li {
+      margin: 0;
+    }
+  }
+
+  .marginLeft {
+    margin-right: rem(16);
+  }
+
+  .marginRight {
+    margin-left: rem(16);
+  }
+
+  .imageLeft,
+  .imageRight {
+    a img {
+      width: 100%;
+      height: 100%;
+      border-radius: rem(8);
+    }
+  }
+}
+
+.leftNoHeader {
+  flex-direction: row-reverse;
+}
+
+.rightNoHeader {
+  flex-direction: row;
+}
+
+.leftNoHeader,
+.rightNoHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-top: rem(16);
+  margin-bottom: rem(16);
+
+  .marginLeft,
+  .marginRight,
+  .imageLeft,
+  .imageRight {
+    max-width: 50%;
+    height: auto;
+
+    @include min {
+      max-width: 100%;
+    }
+  }
+
+  .marginLeft ul,
+  .marginRight ul {
+    font-size: rem(16);
+    font-style: italic;
+    max-width: rem(480);
+    margin: 0 rem(16) rem(16);
+    border: none;
+    background-color: $alt-bg-color;
+    border-radius: rem(8);
+    box-shadow: rem(-4) rem(-4) rem(4) $alt-darker-color;
+    padding: rem(8) rem(24);
+
+    li {
+      margin: 0;
+    }
+  }
+
+  .marginLeft {
+    margin-left: rem(16);
+  }
+
+  .marginRight {
+    margin-right: rem(16);
+  }
+
+  .marginLeft,
+  .marginRight {
+    @include min {
+      margin: 0;
+    }
+  }
+
+  .imageLeft,
+  .imageRight {
+    img {
+      width: 100%;
+      height: rem(360);
+      border-radius: rem(8);
+    }
+  }
+
+  @include min {
+    flex-direction: column;
+  }
+}
+
+@include min {
+  .rowLeft,
+  .rowRight {
+    flex-direction: column;
+    margin-top: rem(48);
+
+    .marginLeft,
+    .marginRight,
+    .imageLeft,
+    .imageRight {
+      max-width: 100%;
+    }
+
+    .marginLeft h2,
+    .marginRight h2 {
+      text-align: center;
+      font-size: rem(26);
+    }
+  }
+}

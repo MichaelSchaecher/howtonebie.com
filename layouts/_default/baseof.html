@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+  <head>
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+    {{ partial "head.html" . }}
+  </head>
+
+  <body>
+    {{ partial "header.html" . }}
+
+    <!-- Wrapper id is used for containing the main content -->
+    <main id="wrapper" class="wrapper">{{ block "content" . }}{{ end }}</main>
+
+    <footer class="main-footer">{{ partial "footer.html" . }}</footer>
+  </body>
+</html>

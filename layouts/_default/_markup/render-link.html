@@ -1,0 +1,21 @@
+<!-- Render a link with Font Awesome icon based on the link type -->
+{{ if findRE "^(https?:)?//" (lower .Destination) }}
+  <a
+    href="{{ .Destination | safeURL }}"
+    title="{{ .Title }}"
+    class="external-link"
+    rel="noopener"
+  >
+    {{ .Text | safeHTML }}
+    <i class="fa-solid fa-link"></i>
+  </a>
+{{ else }}
+  <a
+    href="{{ .Destination | safeURL }}"
+    title="{{ .Title }}"
+    class="internal-link"
+  >
+    {{ .Text | safeHTML }}
+    <i class="fa-solid fa-link-slash"></i>
+  </a>
+{{ end }}

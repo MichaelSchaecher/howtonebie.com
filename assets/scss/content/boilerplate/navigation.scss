@@ -1,0 +1,167 @@
+// This SCSS file is used for the body tag and some base styles for the site.
+
+// Path: assets/scss/base/body.scss
+// Compare this snippet from themes/hugo-coder/assets/scss/_base.scss:
+
+// Inherit box-sizing from html
+
+@use "content/utilities/mixins-functions" as *;
+@use "content/utilities/colors" as *;
+@use "content/utilities/fonts" as *;
+
+// Default font and font weight use for the site navigation header
+#nav .nav-title,
+#nav .nav-list .nav-item .nav-link {
+  font-family: "K2D";
+  font-weight: 600;
+}
+
+#nav {
+  background-color: $bg-color;
+  line-height: rem(40);
+  width: 100%;
+  // border-radius: rem(10) rem(10) 0 0;
+  // border-left: rem(3) solid $alt-darker-color;
+  // border-right: rem(3) solid $alt-darker-color;
+
+  @include min {
+    height: rem(56);
+  }
+}
+
+#nav .nav-title {
+  letter-spacing: rem(2);
+  text-transform: uppercase;
+  color: $fg-color;
+  font-size: rem(18);
+  float: left;
+  margin-left: rem(16);
+
+  @include min {
+    margin: rem(2) rem(16);
+  }
+
+  // The title doesn't need to be animated or change on hover.
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    text-shadow: none;
+  }
+}
+
+#nav .nav-list {
+  float: right;
+  list-style: none;
+  margin: 0 rem(16) 0 0;
+  padding: 0;
+
+  @include min {
+    top: rem(6);
+    right: 0;
+    z-index: 5;
+    visibility: hidden;
+    opacity: 0;
+    padding: 0;
+    margin-right: rem(14);
+    width: 100%;
+    background-color: $bg-color;
+    transition:
+      opacity 0.25s,
+      min-height 0.15s linear;
+  }
+
+  .nav-item {
+    float: left;
+    margin: 0;
+    position: relative;
+    margin-right: rem(16);
+
+    // Remove the margin-right from the last item.
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include min {
+      float: none !important;
+      text-align: center;
+      margin: 0;
+    }
+
+    .nav-link {
+      display: inline-block;
+      border-radius: rem(4);
+      font-size: rem(18);
+      text-transform: uppercase;
+      color: $fg-color;
+
+      &:hover,
+      &:focus,
+      &:active {
+        text-decoration: underline;
+        text-shadow: none;
+      }
+
+      @include min {
+        margin: 0;
+      }
+    }
+  }
+}
+
+#nav .menu-list {
+  display: none;
+
+  @include min {
+    &:checked + label > i {
+      text-shadow: rem(2) rem(2) rem(6) $link-color;
+    }
+
+    &:checked + label + ul {
+      visibility: visible;
+      opacity: 50;
+      width: 50%;
+      height: auto;
+
+      // Set the background color with transparency.
+      background-color: $alt-bg-color;
+
+      // Set below the nav bar and to the right.
+      position: absolute;
+      top: rem(40);
+      transition: all 0.25s ease-in-out;
+
+      .nav-link {
+        color: $fg-color;
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: $link-color;
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    &:focus-visible + label {
+      outline-style: auto;
+    }
+  }
+}
+
+#nav .menu-button {
+  display: none;
+
+  @include min {
+    display: block;
+    font-size: rem(24);
+    font-weight: 400;
+    margin-right: rem(14);
+  }
+
+  i {
+    &:hover,
+    &:focus {
+      color: $fg-color;
+    }
+  }
+}

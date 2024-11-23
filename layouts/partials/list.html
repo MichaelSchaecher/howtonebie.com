@@ -1,0 +1,34 @@
+<!--
+  This file, list.html, is used for generic listings that are not blog-related.
+  It is used for the following pages:
+  - categories
+  - tags
+  - series
+  - author or authors
+-->
+
+<section class="container list">
+  <header>
+
+    <!-- Only use the featured images if on is set. -->
+    {{ with .Params.featuredImage }}
+      <img class="featuredImage" src="{{ . | relURL }}" alt="Featured image" />
+    {{ end }}
+
+    <h1 class="list-title">
+      {{- if eq .Kind "term" -}}
+        {{- print " - " -}} {{- i18n .Data.Plural 1 | title -}} {{- print " - " -}}
+      {{- end -}}
+      <!-- New line -->
+      <br />
+      {{ title (i18n (lower .Title)) | default .Title }}
+    </h1>
+  </header>
+
+  {{ .Content }}
+
+  <ul class="blogging">
+    {{ partial "li.html" . }}
+  </ul>
+  {{ partial "pagination.html" . }}
+</section>

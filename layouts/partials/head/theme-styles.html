@@ -1,0 +1,32 @@
+<!--
+  JavaScript for Font Awesome using the kit code. NOTE: This is only available if you have a Font Awesome account.
+-->
+
+<!-- Use the Font Awesome CDN if it is set in the site configuration yaml file. -->
+{{ with .Site.Params.fontAwesomeCDN }} <link rel="stylesheet" href="{{ . }}" /> {{ end }}
+
+<!--
+  Use default scss transpiler to generate the css file until I fix the issue with ForkAwesome unable
+  to use dart-sass transpiler because of how it handles the @font-face directive.
+-->
+{{ if .Site.IsServer }}
+  {{ $cssOpts := (dict "transpiler" "dartsass" "targetPath" "css/simple-dark.css" "enableSourceMap" true ) }}
+  {{ $styles := resources.Get "scss/simple-dark.scss" | resources.ExecuteAsTemplate "style.simple-dark.css" . |
+  toCSS $cssOpts  | minify | fingerprint }}
+  <link
+    rel="stylesheet"
+    href="{{ $styles.RelPermalink }}"
+    media="screen"
+  />
+{{ else }}
+  {{ $cssOpts := (dict "transpiler" "dartsass" "targetPath" "css/simple-dark.css" ) }}
+  {{ $styles := resources.Get "scss/simple-dark.scss" | resources.ExecuteAsTemplate "style.simple-dark.css" . |
+  toCSS $cssOpts | minify | fingerprint }}
+  <link
+    rel="stylesheet"
+    href="{{ $styles.RelPermalink }}"
+    integrity="{{ $styles.Data.Integrity }}"
+    crossorigin="anonymous"
+    media="screen"
+  />
+{{ end }}

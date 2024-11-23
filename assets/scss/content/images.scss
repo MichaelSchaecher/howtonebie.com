@@ -1,0 +1,104 @@
+// Simple-Dark by Michael Schaecher is licensed under the MIT License.
+
+@use "utilities/fonts" as *;
+@use "utilities/mixins-functions" as *;
+@use "utilities/colors" as *;
+
+.construction,
+.avatar,
+.errorAvatar {
+  height: rem(360);
+  margin-bottom: rem(32);
+
+  @include min {
+    height: auto;
+    width: 100%;
+    margin: rem(48) 0 0 0;
+  }
+}
+
+.errorAvatar {
+  width: auto;
+  // border-radius: rem(192);
+
+  @include min {
+    height: rem(256);
+    width: 100%;
+    margin: rem(48) 0 0 0;
+  }
+}
+
+.articleImage,
+.featuredImage {
+  width: 100%;
+  height: rem(128);
+  border-radius: rem(8);
+
+  @include min {
+    height: rem(92);
+  }
+}
+
+.left {
+  margin: rem(16);
+  align-items: flex-start;
+
+  // The caption is 50% of the width of the figure.
+  figcaption p {
+    text-align: left;
+  }
+}
+
+.center {
+  align-items: center;
+
+  // The caption is 50% of the width of the figure.
+  figcaption p {
+    text-align: center;
+  }
+}
+.right {
+  align-items: flex-end;
+
+  // The caption is 50% of the width of the figure.
+  figcaption p {
+    text-align: right;
+  }
+}
+
+.left,
+.center,
+.right {
+  display: flex;
+  flex-direction: column;
+  margin: rem(16) 0;
+
+  img {
+    width: rem(640);
+    height: rem(380);
+    border-radius: rem(8);
+  }
+
+  figcaption {
+    margin-top: rem(4);
+    p {
+      font-size: rem(14);
+    }
+  }
+
+  @include min {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      margin: auto;
+    }
+
+    figcaption p {
+      text-align: center;
+    }
+  }
+}

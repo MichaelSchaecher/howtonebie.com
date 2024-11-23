@@ -1,0 +1,7 @@
+{{ if .HasShortcode "mermaid" }}
+  <script
+    type="application/javascript"
+    src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"
+  ></script>
+  <script>mermaid.initialize( {startOnLoad: "true", theme: "dark" } );</script>
+{{ end }}

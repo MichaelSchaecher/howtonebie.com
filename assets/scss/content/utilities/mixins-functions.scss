@@ -1,0 +1,20 @@
+//  This file is dedicated to SCSS mixins: No other code should be placed here.
+
+//  This function, rem, converts pixel values to rem units. It takes a pixel value as input and returns
+//  the equivalent rem value. The conversion is done by dividing the pixel value by 16 (as the default
+//  root font-size is 16px) and then multiplying by 1rem.
+@function rem($pixels) {
+  @return calc($pixels / 16) * 1rem;
+}
+
+@mixin max($screen: rem(640)) {
+  @media (width >= $screen) {
+    @content;
+  }
+}
+
+@mixin min($screen: rem(640)) {
+  @media (width < $screen) {
+    @content;
+  }
+}

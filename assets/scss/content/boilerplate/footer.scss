@@ -1,0 +1,42 @@
+/**
+  * This SCSS file contains styles for the main footer of the website. It includes various styles for the
+  * footer elements such as links, headings, and social media icons. The styles defined here are intended
+  * to be used across the entire website to maintain consistency in the footer design.
+  *
+  * Developers should refer to this file when making changes or additions to the main footer.
+ **/
+
+@use "../utilities/fonts" as *;
+@use "../utilities/mixins-functions" as *;
+@use "../utilities/colors" as *;
+
+// rem is a function from the utilities module that converts pixels to rem units. 16px = 1rem
+
+// Media query mixin from the utilities is used setting changes due to screen size.
+
+.main-footer {
+  background-color: $bg-color;
+  line-height: rem(40);
+  width: 100%;
+  // border-radius: 0 0 rem(8) rem(8);
+  // border-left: rem(3) solid $alt-darker-color;
+  // border-right: rem(3) solid $alt-darker-color;
+
+  #footer-text {
+    text-align: center;
+    font-size: rem(16);
+    line-height: rem(40);
+
+    // Reset the top and bottom margin:
+    margin: 0;
+
+    a {
+      &:hover,
+      &:focus,
+      &:active {
+        color: $link-color;
+        text-decoration: none;
+      }
+    }
+  }
+}

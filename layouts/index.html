@@ -1,0 +1,12 @@
+{{ define "content" }}
+<section class="container centered">
+  <div class="home">
+    <div class="home-info">
+      {{ partialCached "partials/home/avatar.html" . }}
+    </div>
+    <div class="quote-box">{{ partial "partials/home/quotes.html" . }}</div>
+</div>
+{{ partialCached "partials/home/description.html" . }}
+{{ partialCached "partials/home/social.html" . }}
+</section>
+{{ end }}

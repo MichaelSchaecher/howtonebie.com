@@ -1,0 +1,56 @@
+<!-- Icons used by the web browsers tab and/or taskbar. -->
+<link
+  rel="icon"
+  type="image/svg+xml"
+  href="{{ .Site.Params.images.favicon | default "/favicon/favicon.ico" | relURL }}"
+  sizes="any"
+>
+
+<!-- Other icons used by the web browsers tab and/or taskbar. -->
+<link
+  rel="icon"
+  type="image/png"
+  ref="{{ .Site.Params.images.favicon_32 | default "/favicon/favicon-32x32.png" | relURL }}"
+  sizes="32x32"
+>
+<link
+  rel="icon"
+  type="image/png"
+  href="{{ .Site.Params.images.favicon_16 | default "/favicon/favicon-16x16.png" | relURL }}"
+  sizes="16x16"
+>
+
+<!-- iOS icons for touch devices. -->
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  type="image/png"
+  href="{{ .Site.Params.images.apple_touch | default "/favicon/apple-touch-icon.png" | relURL }}"
+>
+
+<!-- Android icons for touch devices. -->
+<link
+  rel="icon"
+  sizes="192x192"
+  type="image/png"
+  href="{{ .Site.Params.images.android_192 | default "/favicon/android-chrome-192x192.png" | relURL }}"
+>
+
+<link
+  rel="icon"
+  sizes="512x512"
+  type="image/png"
+  href="{{ .Site.Params.images.android_512 | default "/favicon/android-chrome-512x512.png" | relURL }}"
+>
+
+<link
+  rel="manifest"
+  href="{{ .Site.Params.images.manifest | default "/favicon/site.webmanifest" | relURL }}"
+>
+
+<!-- Safari pinned tab icon. -->
+<link
+  rel="mask-icon"
+  href="{{ .Site.Params.images.safari_pinned | default "/favicon/favicon.ico" | relURL }}"
+  color="{{ .Site.Params.images.mask_icon_color | default "#5bbad5" }}"
+>

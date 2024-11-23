@@ -1,0 +1,53 @@
+// Simple-Dark by Michael Schaecher is licensed under the MIT License.
+
+@use "../utilities/fonts" as *;
+@use "../utilities/mixins-functions" as *;
+@use "../utilities/colors" as *;
+
+article {
+  background-color: $bg-color;
+
+  border-radius: rem(8);
+
+  details {
+    summary {
+      cursor: pointer;
+    }
+  }
+
+  // Small screens
+  @include max {
+    margin: rem(48) 0;
+  }
+}
+
+// Style the line at the end of the post.
+.the-end {
+  padding: rem(24) rem(32);
+  hr {
+    border: rem(2) dashed $accent-color;
+  }
+}
+
+figcaption p {
+  text-align: center;
+  font-style: italic;
+  font-size: rem(16);
+  margin: 0;
+}
+
+h2 {
+  color: $alt-title-color;
+  text-decoration: overline;
+  margin: rem(52) 0;
+
+  @include min {
+    text-align: center;
+  }
+}
+
+h3,
+h4 {
+  font-style: oblique;
+  margin: rem(42) 0;
+}

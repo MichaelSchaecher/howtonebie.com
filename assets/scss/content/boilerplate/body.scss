@@ -1,0 +1,66 @@
+// Simple-Dark by Michael Schaecher is licensed under the MIT License.
+
+@use "../utilities/fonts" as *;
+@use "../utilities/mixins-functions" as *;
+@use "../utilities/colors" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: rem(16);
+  font-weight: 400;
+  line-height: 1.15;
+  padding: 0;
+
+  // Hide the scrollbar to prevent layout shifting to the left and look off centered.
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  background-color: $alt-bg-color;
+
+  font-family: $font-family;
+  color: $fg-color;
+  overflow-y: auto;
+
+  @include min {
+    font-size: rem(14);
+    line-height: rem(18);
+  }
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: rem(1080);
+}
+
+body .wrapper {
+  flex: 1;
+  background-color: $bg-color;
+  // border-left: rem(3) solid $alt-darker-color;
+  // border-right: rem(3) solid $alt-darker-color;
+
+  .container {
+    margin: 0 rem(16);
+  }
+}
+
+body {
+  .wrapper {
+    .centered {
+      display: flex;
+      flex-direction: column;
+      padding-top: rem(64);
+    }
+  }
+}
+
+iframe[src*="disqus"] {
+  color-scheme: light;
+}

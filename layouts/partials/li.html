@@ -1,0 +1,16 @@
+{{ range .Paginator.Pages }}
+  <li>
+    <div class="post-list">
+      <div class="date">
+        {{ .Date | time.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}
+      </div>
+      <div class="title">
+        <a
+          class="title"
+          href="{{ .Params.externalLink | default .RelPermalink }}"
+          >{{ .Title }}</a
+        >
+      </div>
+    </div>
+  </li>
+{{ end }}

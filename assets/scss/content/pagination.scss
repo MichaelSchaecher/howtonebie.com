@@ -1,0 +1,40 @@
+// Simple-Dark by Michael Schaecher is licensed under the MIT License.
+
+// Path: content/pagination.scss
+
+@use "utilities/fonts" as *;
+@use "utilities/mixins-functions" as *;
+@use "utilities/colors" as *;
+
+.pagination {
+  margin-top: rem(24);
+  text-align: center;
+  font-family: $font-family;
+
+  li {
+    display: inline;
+    text-align: center;
+    font-weight: 700;
+
+    span {
+      margin: 0;
+      text-align: center;
+      width: rem(35);
+    }
+
+    a {
+      font-weight: 300;
+
+      span {
+        margin: 0;
+        text-align: center;
+        width: rem(35);
+      }
+    }
+  }
+
+  // Small screens
+  @include min {
+    margin-top: rem(16);
+  }
+}

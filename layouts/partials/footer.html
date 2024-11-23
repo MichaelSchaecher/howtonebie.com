@@ -1,0 +1,37 @@
+<p id="footer-text">
+  Copyright
+
+  <i class="fa-regular fa-copyright"></i>
+
+  <!-- Use span with java script to update the year -->
+  <span id="currentYear"></span>
+
+  <!-- Just in case java is disabled -->
+  <noscript>{{ now.Year }}</noscript>
+
+  <!-- If there is a author, display it -->
+  {{ with .Site.Params.author }} by {{ . }} {{ end }}
+
+  <!-- If there is a license, display it -->
+  {{ if .Site.Params.license.url }}
+    {{ i18n "licensed_under" }}
+    <a href="{{ .Site.Params.license.url | safeURL }}"
+      rel="license">{{ with .Site.Params.license.type }}{{ . }} {{ end }}
+    </a>
+    license
+  {{ else }}
+    {{ i18n "licensed_under" }}
+    <a href="https://raw.githubusercontent.com/MichaelSchaecher/simple-dark/main/COPYING"
+      rel="license">MIT</a>
+    license
+  {{ end }} ·
+
+  <!-- Display the powered by Hugo and Coder -->
+  {{ i18n "powered_by" }}
+  <a href="https://gohugo.io/" rel="nofollow">Hugo</a>
+  &plus;
+  <a href="https://github.com/MichaelSchaecher/simple-dark" rel="nofollow">Simple Dark</a>
+  </p>
+
+<!-- Update the year to the current year -->
+<script>document.getElementById("currentYear").innerHTML = new Date().getFullYear();</script>

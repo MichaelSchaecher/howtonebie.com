@@ -1,0 +1,12 @@
+{{ define "content" }}
+  <section class="container centered">
+    <div class="notFound">
+      <div id="errorAvatar">
+        {{ partialCached "partials/404/errorAvatar.html" . }}
+      </div>
+      <div class="errorText">
+        {{ partialCached "partials/404/errorDescription.html" . }}
+      </div>
+    </div>
+  </section>
+{{ end }}

@@ -1,0 +1,49 @@
+// Simple-Dark by Michael Schaecher is licensed under the MIT License.
+
+@use "utilities/fonts" as *;
+@use "utilities/mixins-functions" as *;
+@use "utilities/colors" as *;
+
+.next-post {
+  padding: rem(48) 0;
+
+  .prev,
+  .next {
+    // Fixed width and height
+    width: rem(100);
+    height: rem(32);
+
+    border: none;
+    border-radius: rem(4);
+    transition: all 0.25s ease-in-out;
+    text-decoration: none;
+    color: $link-color;
+    background-color: $alt-fg-color;
+    margin: rem(8);
+    font-size: rem(16);
+    line-height: 1.5;
+    font-weight: 600;
+
+    i {
+      color: $fg-color;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      cursor: pointer;
+      background-color: $button-bg-color;
+      color: $fg-color;
+
+      // Animate box-shadow on hover, focus, and active
+      box-shadow: 0 0 rem(8) $link-color;
+    }
+  }
+
+  .prev {
+    float: right;
+  }
+  .next {
+    float: left;
+  }
+}
