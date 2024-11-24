@@ -32,9 +32,10 @@
       {{ end }}
     </div>
     <div class="imageLeft">
-      <a href="{{ $href }}" class="href">
+      {{/*  <a href="{{ $href }}" class="href">
         <img src="{{ $src }}" alt="{{ $alt }}" />
-      </a>
+      </a>  */}}
+      <img src="{{ $src }}" alt="{{ $alt }}" />
     </div>
   </div>
 {{ else if eq $row "rowRight" }}
@@ -64,9 +65,9 @@
       {{ end }}
     </div>
     <div class="imageRight">
-      <a href="{{ $href }}" class="href">
-        <img src="{{ $src }}" alt="{{ $alt }}" />
-      </a>
+      {{/*  <a href="{{ $href }}" class="href">
+      </a>  */}}
+      <img src="{{ $src }}" alt="{{ $alt }}" />
     </div>
   </div>
 {{ else if eq $row "leftNoHeader" }}
@@ -93,9 +94,10 @@
         <p>{{ $content | markdownify }}</p>
       {{ end }}
     </div>
-    <div class="imageLeft">
+    {{/*  <div class="imageLeft">
       <img src="{{ $src }}" alt="{{ $alt }}" />
-    </div>
+    </div>  */}}
+    <img src="{{ $src }}" alt="{{ $alt }}" />
   </div>
 {{ else if eq $row "rightNoHeader" }}
   <div class="{{ $row }}">
@@ -121,8 +123,9 @@
         <p>{{ $content | markdownify }}</p>
       {{ end }}
     </div>
-    <div class="imageLeft">
+    {{/*  <div class="imageLeft">
       <img src="{{ $src }}" alt="{{ $alt }}" />
-    </div>
+    </div>  */}}
+    <img src="{{ $src }}" alt="{{ $alt }}" />
   </div>
 {{ end }}

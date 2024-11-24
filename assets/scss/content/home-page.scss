@@ -23,9 +23,9 @@
     // Center the content without over riding the flex property of the parent.
     margin: auto;
 
-    background-color: $alt-bg-color;
+    background-color: $bg-color;
     border-radius: rem(8);
-    box-shadow: rem(-4) rem(-4) rem(4) $alt-darker-color;
+    box-shadow: rem(-6) rem(-6) rem(6) $accent-color;
     text-align: center;
     height: calc(100% + 15%);
   }

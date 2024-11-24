@@ -22,7 +22,7 @@ header {
   .blog-title {
     font-size: rem(50);
     line-height: rem(46);
-    color: $title-color;
+    color: $accent-color;
 
     // Set media query for max-width to 800px or less.
     @include min {

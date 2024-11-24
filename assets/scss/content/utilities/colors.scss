@@ -3,10 +3,10 @@ $bg-color: rgb(35, 35, 35) !default;
 $fg-color: rgb(210, 210, 210) !default;
 
 // Alt colors
-$alt-bg-color: $bg-color !default;
+$alt-bg-color: rgb(55, 55, 55) !default;
 $alt-fg-color: rgb(75, 75, 75) !default;
 
-$alt-darker-color: rgb(55, 55, 55) !default;
+$dark-bg-color: rgb(25, 25, 25) !default;
 
 // Accent colors (used for links, buttons and decorative elements)
 $link-color: rgb(95, 15, 175) !default;

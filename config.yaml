@@ -1,5 +1,5 @@
 baseURL: "/"
-title: Home
+title: HowToNebie
 languageCode: en
 defaultContentLanguage: en
 paginate: 10
@@ -27,6 +27,7 @@ markup:
     noClasses: false
 
 params:
+  root_path: home
   author: Michael Schaecher
   description: "Sharing my thoughts about computers, programming, home audio/video and some gaming."
   keywords: blog, developer, personal

@@ -20,7 +20,7 @@ html {
   // Hide the scrollbar to prevent layout shifting to the left and look off centered.
   scrollbar-width: none;
   scroll-behavior: smooth;
-  background-color: $alt-bg-color;
+  background-color: $bg-color;
 
   font-family: $font-family;
   color: $fg-color;
@@ -42,7 +42,7 @@ body {
 
 body .wrapper {
   flex: 1;
-  background-color: $bg-color;
+  // background-color: $bg-color;
   // border-left: rem(3) solid $alt-darker-color;
   // border-right: rem(3) solid $alt-darker-color;
 

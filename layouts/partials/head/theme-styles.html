@@ -10,8 +10,8 @@
   to use dart-sass transpiler because of how it handles the @font-face directive.
 -->
 {{ if .Site.IsServer }}
-  {{ $cssOpts := (dict "transpiler" "dartsass" "targetPath" "css/simple-dark.css" "enableSourceMap" true ) }}
-  {{ $styles := resources.Get "scss/simple-dark.scss" | resources.ExecuteAsTemplate "style.simple-dark.css" . |
+  {{ $cssOpts := (dict "transpiler" "dartsass" "targetPath" "css/how-to-nebie.css" "enableSourceMap" true ) }}
+  {{ $styles := resources.Get "scss/how-to-nebie.scss" | resources.ExecuteAsTemplate "style.how-to-nebie.css" . |
   toCSS $cssOpts  | minify | fingerprint }}
   <link
     rel="stylesheet"
@@ -19,8 +19,8 @@
     media="screen"
   />
 {{ else }}
-  {{ $cssOpts := (dict "transpiler" "dartsass" "targetPath" "css/simple-dark.css" ) }}
-  {{ $styles := resources.Get "scss/simple-dark.scss" | resources.ExecuteAsTemplate "style.simple-dark.css" . |
+  {{ $cssOpts := (dict "transpiler" "dartsass" "targetPath" "css/how-to-nebie.css" ) }}
+  {{ $styles := resources.Get "scss/how-to-nebie.scss" | resources.ExecuteAsTemplate "style.how-to-nebie.css" . |
   toCSS $cssOpts | minify | fingerprint }}
   <link
     rel="stylesheet"
