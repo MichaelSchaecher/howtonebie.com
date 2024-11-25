@@ -101,9 +101,7 @@
   margin-bottom: rem(16);
 
   .marginLeft,
-  .marginRight,
-  .imageLeft,
-  .imageRight {
+  .marginRight {
     max-width: 50%;
     height: auto;
 
@@ -144,14 +142,12 @@
     }
   }
 
-  .imageLeft,
-  .imageRight {
-    img {
-      width: 100%;
-      height: rem(360);
-      border-radius: rem(8);
-    }
+  img {
+    width: 100%;
+    height: rem(360);
+    border-radius: rem(8);
   }
+
 
   @include min {
     flex-direction: column;
