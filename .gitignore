@@ -11,5 +11,3 @@ node_modules/
 
 # Hugo build files
 .hugo_build.lock
-
-content/*
