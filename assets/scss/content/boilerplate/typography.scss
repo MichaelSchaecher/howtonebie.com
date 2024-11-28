@@ -74,7 +74,9 @@ h6 {
 
 // Heading 1 styles
 h1 {
-  font-size: rem(40);
+  font-size: rem(42);
+  color: $accent-color;
+
   @include min {
     font-size: rem(30);
   }

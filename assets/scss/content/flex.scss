@@ -31,17 +31,18 @@
   .marginRight h2 {
     font-size: rem(32);
     margin: 0 auto rem(16);
-    text-decoration: overline $link-color;
+    color: $alt-fg-color;
+    text-decoration: overline $alt-fg-color;
 
     a {
       text-decoration: none;
       transition: all 0.3s ease-in-out;
-      color: $link-color;
+      color: $alt-fg-color;
 
       &:hover,
       &:focus {
-        color: $link-color;
-        text-shadow: 0 0 rem(4) $link-color;
+        color: $alt-fg-color;
+        text-shadow: 0 0 0 $alt-fg-color;
       }
     }
   }
