@@ -6,11 +6,6 @@
   <section class="container post">
     <article>
       <header>
-        <!-- Only use the featured images if on is set. -->
-        {{ with .Params.featuredImage }}
-          <img class="articleImage" src="{{ . | relURL }}" alt="Featured image" />
-        {{ end }}
-
 
         <!-- Title doesn't need to be a link to its self. -->
         <div class="post-title">
@@ -59,9 +54,15 @@
 
         </div>
       </header>
-      <div class="toc">
-        <h2>Table of Contents</h2>
-        {{ .TableOfContents }}
+      <div class="post-toc-image">
+        <div class="toc">
+          <h2>Table of Contents</h2>
+          {{ .TableOfContents }}
+        </div>
+        <!-- Only use the featured images if on is set. -->
+        {{ with .Params.featuredImage }}
+          <img class="articleImage" src="{{ . | relURL }}" alt="Featured image" />
+        {{ end }}
       </div>
       <div class="the-end"><hr></div>
       {{ .Content }}

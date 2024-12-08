@@ -84,7 +84,7 @@ h1 {
 
 // Heading 2 styles
 h2 {
-  font-size: rem(32);
+  font-size: rem(36);
   @include min {
     font-size: rem(26);
   }
@@ -92,7 +92,7 @@ h2 {
 
 // Heading 3 styles
 h3 {
-  font-size: rem(24);
+  font-size: rem(30);
   @include min {
     font-size: rem(22);
   }
@@ -100,15 +100,17 @@ h3 {
 
 // Heading 4 styles
 h4 {
-  font-size: rem(20);
+  font-size: rem(24);
   @include min {
     font-size: rem(18);
   }
 }
 
 // Heading 5 styles
-h5 {
-  font-size: rem(18);
+h5,
+h6,
+p {
+  font-size: rem(16);
   @include min {
     font-size: rem(16);
   }
@@ -118,11 +120,6 @@ small {
   font-size: rem(12);
   line-height: rem(16);
   vertical-align: top;
-}
-
-h6,
-p {
-  font-size: rem(16);
 }
 
 // Heading 6 styles

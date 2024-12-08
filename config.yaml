@@ -27,7 +27,6 @@ markup:
     noClasses: false
 
 params:
-  root_path: home
   author: Michael Schaecher
   description: "Sharing my thoughts about computers, programming, home audio/video and some gaming."
   keywords: blog, developer, personal
@@ -55,7 +54,7 @@ params:
 
   # Set an image to be used as part of the listing of blogs and posts.
   images:
-    avatar: /images/logo.svg
+    avatar: "https://images.pexels.com/photos/313690/pexels-photo-313690.jpeg"
     # favicon:
     # favicon_32:
     # favicon_16:

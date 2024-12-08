@@ -51,23 +51,6 @@
     text-align: right;
   }
 
-  .marginLeft ul,
-  .marginRight ul {
-    font-size: rem(16);
-    font-style: italic;
-    max-width: rem(480);
-    margin: 0 rem(16) rem(16);
-    border: none;
-    background-color: $alt-bg-color;
-    border-radius: rem(8);
-    box-shadow: rem(-4) rem(-4) rem(4) $alt-fg-color;
-    padding: rem(8) rem(24);
-
-    li {
-      margin: 0;
-    }
-  }
-
   .marginLeft {
     margin-right: rem(16);
   }
@@ -118,10 +101,6 @@
     max-width: rem(480);
     margin: 0 rem(16) rem(16);
     border: none;
-    background-color: $alt-bg-color;
-    border-radius: rem(8);
-    box-shadow: rem(-4) rem(-4) rem(4) $alt-fg-color;
-    padding: rem(8) rem(24);
 
     li {
       margin: 0;

@@ -8,3 +8,6 @@ MD033: false
 
 # MD034 - Bare URL used
 MD034: false
+
+# MD042 - No empty links
+MD042: false

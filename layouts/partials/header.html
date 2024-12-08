@@ -2,11 +2,7 @@
 <header id="nav">
   <!-- Site title -->
   <a class="nav-title" href="{{ .Site.BaseURL | relLangURL }}">
-    {{ with .Site.Params.root_path }}
-      {{ . }}
-    {{ else }}
-      {{ .Site.Title }}
-    {{ end }}
+    {{ .Site.Title }}
   </a>
 
   <!-- Menu button multiligual -->

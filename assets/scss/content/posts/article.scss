@@ -36,18 +36,15 @@ figcaption p {
   margin: 0;
 }
 
-h2 {
+h2,
+h3,
+h4 {
   color: $alt-fg-color;
-  text-decoration: overline;
-  margin: rem(52) 0;
+  margin: rem(32) 0;
+  // font-style: oblique;
+  // margin: rem(42) 0;
 
   @include min {
     text-align: center;
   }
-}
-
-h3,
-h4 {
-  font-style: oblique;
-  margin: rem(42) 0;
 }
