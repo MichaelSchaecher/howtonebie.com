@@ -208,7 +208,6 @@ Once you have an account, you can create a subdomain and get the token. This tok
 
 {{< /flex >}}
 
-
 ### Unattended Upgrades
 
 {{< flex src="./ct-upgrades.png" alt="Unattended Upgrades" class="rightNoHeader" >}}
@@ -224,6 +223,7 @@ When the installation is complete I would recommend editing the `/etc/apt/apt.co
 Now it is time to set up the **DuckDNS** service so that the IP address is updated when it changes. Some routers have a built in service that can do this for you, but if you don't have that option then this is a good way to do it.
 
 Create the duckdns.timer file in `/usr/lib/systemd/system/`.
+
 ```systemd
 [Unit]
 Description = DuckDNS IP Updater
@@ -242,6 +242,7 @@ WantedBy = timers.target
 ```
 
 Create the duckdns.service file in `/usr/lib/systemd/system/`.
+
 ```systemd
 [Unit]
 Description = DuckDNS IP Updater
@@ -267,4 +268,3 @@ In this guide we set up a **WireGuard** server on a **Proxmox** server using **L
 I hope that this guide was helpful and that you were able to set up your own **WireGuard** server. If you have any questions or comments, please leave them below.
 
 [back to top](#)
-

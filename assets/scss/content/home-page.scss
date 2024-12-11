@@ -15,6 +15,10 @@
   .home-info {
     flex: 2;
     padding-right: rem(32);
+
+    @include min {
+      padding: 0;
+    }
   }
 
   .quote-box {
@@ -28,6 +32,11 @@
     box-shadow: rem(-6) rem(-6) rem(6) $accent-color;
     text-align: center;
     height: calc(100% + 15%);
+
+    @include min {
+      border-radius: 0;
+      box-shadow: none;
+    }
   }
 
   @include min {
