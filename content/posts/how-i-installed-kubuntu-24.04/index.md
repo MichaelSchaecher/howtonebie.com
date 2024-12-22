@@ -14,7 +14,7 @@ categories:
   - BTRFS
 externalLink: ""
 series:
-draft: true
+draft: false
 weight: 20
 featuredImage: "https://kubuntu.org/wp-content/uploads/2024/04/3ee9/kubuntu-24.04-banner.png"
 ---
