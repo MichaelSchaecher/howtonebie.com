@@ -6,7 +6,11 @@ paginate: 10
 
 enableEmoji: true
 
-DisqusShortname: https-howtonebie-com
+# DisqusShortname: https-howtonebie-com
+
+services:
+  disqus:
+    shortname: https-howtonebie-com
 
 module:
   hugoVersion:
