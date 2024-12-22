@@ -6,8 +6,7 @@ paginate: 10
 
 enableEmoji: true
 
-# Enable Disqus comments
-disqusShortname: blackstewie-com
+DisqusShortname: https-howtonebie-com
 
 module:
   hugoVersion:
@@ -35,26 +34,11 @@ params:
     type: MIT
     url: /license
 
-  # Set the variables for enabling giscus comments
-  #giscus:
-  # repo: MichaelSchaecher/website
-  # repo_id: R_kgDOKa5WjQ
-  # category: General
-  # categoryID: DIC_kwDOKa5Wjc4Ca5ud
-  # mapping: url
-  # strict: 0
-  # reactionsEnabled: 1
-  # emitMetadata: 0
-  # inputPosition: top
-  # theme: purple_dark
-  # lang: en
-  #crossorigin="anonymous"
-
-  # Set the variables for enabling utterances comments
+  # Disable comments globally, can be overridden in front matter
+  disableComments: false
 
   # Set an image to be used as part of the listing of blogs and posts.
   images:
-    avatar: "https://images.pexels.com/photos/313690/pexels-photo-313690.jpeg"
     # favicon:
     # favicon_32:
     # favicon_16:
@@ -74,7 +58,7 @@ params:
   # For now this is not supported.
   # rtl: false
 
-  # Hide the toggle button, along with the associated vertical divider
+  # Use the Content Delivery Network (CDN) for Font Awesome icons
   fontAwesomeCDN: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.css
 
   # Series see also post count
@@ -100,6 +84,7 @@ params:
   #scriptsrc: [self,unsafe-inline,https://www.google-analytics.com,https://cdn.jsdelivr.net/]
 
   #prefetchsrc: [self]
+
   # connect-src directive – defines valid targets for to XMLHttpRequest (AJAX), WebSockets or EventSource
   #connectsrc: [self,https://www.google-analytics.com]
 

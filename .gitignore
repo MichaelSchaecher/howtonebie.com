@@ -1,4 +1,5 @@
 # Common ignore for hugo development using VSCode with npm installed.
+.vscode/
 
 # Hugo output directory
 public/
