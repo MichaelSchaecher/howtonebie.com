@@ -13,7 +13,7 @@ categories:
   - new
 externalLink: ""
 series:
-draft: false
+draft: true
 weight: 20
 featuredImage: "https://s3.amazonaws.com/wp-uploads.stopzilla.com/2016/08/02232359/password-security1.jpg"
 ---
