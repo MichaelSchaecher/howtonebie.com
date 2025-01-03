@@ -6,6 +6,34 @@ featuredImage: "./projects/projects.jpg"
 externalLink: ""
 ---
 
+{{< flex src="/projects/btrfs-on-ubuntu.png" alt="BTRFS Snapshot Manager" class="rowRight" href="https://github.com/MichaelSchaecher/btrfs-snapshots-manager" >}}
+
+BTRFS is one of the best filesystems for Linux thanks to the features it offers of most modern filesystems. One of the features that I like the most is the ability to create snapshots of the filesystem. This is very useful when you want to backup your system or just want to try out new software without the fear of breaking your system.
+
+With BTRFS-Snapshots-Manager, there is no need to manually create snapshots before installing, remove or updating software. The script will automatically create a snapshot of the filesystem before and after the installation, removal or update of software. With the added benefit of `Systemd Timers`, the script will also create snapshots at regular intervals each day.
+
+Download the latest release from [here](https://github.com/MichaelSchaecher/btrfs-snapshots-manager/releases/download/1.24.07-78/btrfs-snapshots-manager_1.24.07-78_amd64.deb) and install it using the following command:
+
+```bash
+sudo dpkg -i btrfs-snapshots-manager_*.deb
+```
+
+{{< /flex >}}
+
+{{< flex src="/projects/zram.png" alt="ZRAM for SWAP" class="rowLeft" href="https://github.com/MichaelSchaecher/simple-zram" >}}
+
+I have created a **simple script** to enable **ZRAM** for **SWAP** on **Linux**. This script is based on the **ZRAM** configuration for **Ubuntu** and **Debian**. It creates a **ZRAM** device and enables it as **SWAP**. The script also sets the **ZRAM** device to be used as **SWAP** on boot.
+
+The script is written in **Bash** and can be used on any **Linux** distribution that supports **ZRAM**. However, there is a `deb` package available [here](https://github.com/MichaelSchaecher/simple-zram/releases/download/1.0.1/simple-zram_1.0.1_all.deb).
+
+To install the `deb` package, download it and install it using the following command:
+
+```bash
+sudo dpkg -i simple-zram_*.deb
+```
+
+{{< /flex >}}
+
 {{< flex src="/projects/SystemdScripts.png" alt="SystemD Timer Scripts" class="rowRight"
 href="https://github.com/MichaelSchaecher/systemd-scripts" >}}
 
@@ -21,9 +49,9 @@ If using these scripts, please make sure to adjust the paths and commands to you
 
 > **Note:** The timer script for **Starship Prompt** only works if Starship is installed globally.
 
-{{< /flex >}}
-
 The advantage of using **SystemD** over **Cron** is that it is more reliable when it comes to running tasks at a specific time and if the time was missed. This means that **SystemD** will run the task as soon as possible after the missed time.
+
+{{< /flex >}}
 
 {{< flex src="/projects/Kernel.png" alt="Linux Kernel for WSL" class="rowLeft"
 href="https://github.com/MichaelSchaecher/linux-wsl-kerenel" >}}
@@ -38,9 +66,9 @@ sudo apt install build-essential \
   libelf-dev bc libncurses-dev
 ```
 
-{{< /flex >}}
-
 You can download the compiled kernel from [here](https://github.com/MichaelSchaecher/linux-wsl-kerenel/releases/tag/kernel-release) and install it on your system. **Note**: Don't install in the default location for the kernel. Instead, install it in a separate directory and point to it in your WSL configuration.
+
+{{< /flex >}}
 
 {{< flex src="/projects/simple-dark.png" alt="Hugo Theme Simple Dark" class="rowRight"
 href="https://simple-dark.pages.dev/" >}}
