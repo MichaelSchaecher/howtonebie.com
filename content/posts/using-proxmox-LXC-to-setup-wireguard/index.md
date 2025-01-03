@@ -17,7 +17,7 @@ externalLink: ""
 series:
 draft: false
 weight: 20
-featuredImage: "./posts/using-proxmox-lxc-to-setup-wireguard/wireguard-logo.svg"
+featuredImage: "https://logowik.com/content/uploads/images/wireguard1264.jpg"
 ---
 
 ## Introduction
