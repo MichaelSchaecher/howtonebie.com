@@ -3,17 +3,16 @@
 <section class="container page">
   <article>
     <header>
+      <h1 class="title">{{ .Title }}</h1>
+    </header>
+    <div class="post-toc-image">
       <!-- Only use the featured images if on is set. -->
       {{ with .Params.featuredImage }}
         <img class="articleImage" src="{{ . | relURL }}" alt="Featured image" />
       {{ end }}
-
-
-      <h1 class="title">{{ .Title }}</h1>
-    </header>
+    </div>
 
     {{ .Content }}
-
 
     <!-- Previous and next post -->
     {{ if .Params.scrollPost }}{{ partial "next-article.html" . }}{{ end }}
