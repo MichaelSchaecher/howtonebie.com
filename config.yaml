@@ -123,6 +123,9 @@ menu:
     - name: Projects
       weight: 2
       url: projects/
-    - name: About
+    - name: Wiki
       weight: 3
+      url: /wiki/
+    - name: About
+      weight: 4
       url: /about/

@@ -11,3 +11,6 @@ MD034: false
 
 # MD042 - No empty links
 MD042: false
+
+# No-emphasis-as-header
+MD036: false
