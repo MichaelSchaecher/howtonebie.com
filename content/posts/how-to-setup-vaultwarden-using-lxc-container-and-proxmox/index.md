@@ -49,7 +49,7 @@ Like with all LXC Containers I recommend using the latest version of [Debian](ht
 
 - **Node**: The node you want to create the container on.
 - **VM ID**: Use the default assigned ID.
-- **Hostname**: The hostname you want to assign to the container.
+- **Hostname**: The hostname you want to assign to the container i.e `vaultwarden`.
 - **Password**: The password you want to assign to the container.
 - **SSH public key**: If you want to use a SSH key to login to the container.
 - **Unprivileged container**: This should be unchecked.
@@ -114,15 +114,13 @@ You can use *Docker* if you want, but you will need to manually start the contai
 
 To use Vaultwarden more effectively, we need to create a database and that is why we installed `mariadb-server`. To do this, run the following command: `mysql_secure_installation`. This will prompt you to set a root password and other security settings.
 
-| Prompt | Answer |
-|--------|--------|
-| Enter current password for root (enter for none): | Enter the password that used when you setup the LXC |
-| Remove anonymous users? | Y |
-| Disallow root login remotely? | Y |
-| Remove test database and access to it? | Y |
-| Use unix_socket authentication plugin? | N |
-| Change the root password? | N |
-| Reload privilege tables now? | Y |
+> - Enter current password for root (enter for none): **Root Password**
+> - Remove anonymous users?: **Y**
+> - Disallow root login remotely?: **Y**
+> - Remove test database and access to it?: **Y**
+> - Use unix_socket authentication plugin?: **N**
+> - Change the root password?: **N**
+> - Reload privilege tables now?: **Y**
 
 Now we need to create a database and user for Vaultwarden. To do this, run the following commands: `mariadb`
 
@@ -206,6 +204,79 @@ Leave the **Password hint** blank, because if someone gets access to your accoun
 No you have a secure password manager that you can use to store all your passwords and other information that you want to keep secure. From here you can add the browser extension to your browser and the mobile app to your phone. For password stored in other password managers, you can import them into Vaultwarden by going to the *Settings* tab and clicking on the *Import/Export* tab. For Web Browser passwords follow the steps for the browser that you are using, disable the password manager and then import the passwords into Vaultwarden.
 
 For the mobile app and browser extension, you well need to select the option to use a self-hosted server and enter the domain name that you are using. If you get redirected to the login option, then the domain name is correct. Enter the email address and master password to log into your account.
+
+## Keeping the Container Updated
+
+This can be down with a cron job, but I recommend using [Systemd](https://systemd.io/) script. The benefit of using Systemd over cron is that if for some reason the LXC Container or Main Server is restarted the service well run as soon as possible.
+
+First create a new file in the `/usr/lib/systemd/system/vaultwarden-update.timer` directory and add the following:
+
+```systemd
+[Unit]
+Description = Update Vaultwarden Pod
+After = network-online.target
+Requires = vaultwarden.service
+
+[Timer]
+RandomizedDelaySec = 1h
+OnCalendar = daily
+Persistent = true
+
+[Install]
+WantedBy = timers.target
+```
+
+Now create a new file in the `/usr/lib/systemd/system/vaultwarden-update.service` directory and add the following:
+
+```systemd
+[Unit]
+Description = Update Vaultwarden Pod
+
+[Service]
+Type=oneshot
+ExecStartPre = /usr/bin/systemctl stop vaultwarden
+ExecStart = /usr/bin/podman pull docker://vaultwarden/server:latest
+ExecStartPost = /usr/bin/systemctl start vaultwarden
+
+[Install]
+WantedBy=multi-user.target default.target
+```
+
+Enable the timer by running the following command: `systemctl enable --now vaultwarden-update.timer`. Now the container well be updated when a new version is pulled from the Docker Hub.
+
+## Set it and Forget it
+
+The last thing that needs to be done to keep the *LXC Container* running is to set the container to start when the server is restarted and configure `unattended-upgrades` to keep the server up to date.
+
+### 1: Start LXC Container on Boot
+
+Go to the Proxmox web interface select **Vaultwarden** and click on the **Options** tab. In the **Start at boot** section, check the **Start at boot** option and click **Save**. This well make sure that the container starts when the server is restarted or turned on after a power outage/failure.
+
+### 2: Configure Unattended Upgrades
+
+If you have logged out of the container, log back in and run the following command and using nano or vim edit the file `/etc/apt/apt.conf.d/50unattended-upgrades` and uncomment the following lines: `"origin=Debian,codename=${distro_codename}-updates";`. This well make sure that the server is kept up to date.
+
+```shell
+Unattended-Upgrade::Origins-Pattern {
+        // Codename based matching:
+        // This will follow the migration of a release through different
+        // archives (e.g. from testing to stable and later oldstable).
+        // Software will be the latest available for the named release,
+        // but the Debian release itself will not be automatically upgraded.
+        "origin=Debian,codename=${distro_codename}-updates";
+//      "origin=Debian,codename=${distro_codename}-proposed-updates";
+        "origin=Debian,codename=${distro_codename},label=Debian";
+        "origin=Debian,codename=${distro_codename},label=Debian-Security";
+        "origin=Debian,codename=${distro_codename}-security,label=Debian-Security";
+```
+
+{{< flex src="VaultUnattended.png" alt="Vault Unattended" class="rightNoHeader" >}}
+
+Now run the following command to make sure that the server is kept up to date: `unattended-upgrades --dry-run -v`. You should see a list of allowed repositories that the server can update from. The list should include the repositories that you have uncommented in the `50unattended-upgrades` file.
+
+Now you can log of the **Vaultwarden** container and you are done. The container well now start when the server is restarted and the server well download and install the latest updates released by the Debian team keeping the server secure and updated.
+
+{{< /flex >}}
 
 ## Conclusion
 
