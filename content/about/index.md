@@ -1,5 +1,5 @@
 ---
-title: "About Me"
+title: ""
 date: 2023-09-30T13:36:31-06:00
 description: ""
 slug: ""
@@ -14,7 +14,7 @@ aliases:
   - about-me
   - need-to-know
 draft: false
-featuredImage: "https://images.pexels.com/photos/1577882/pexels-photo-1577882.jpeg"
+featuredImage: "/images/logo.png"
 ---
 
 What can I say about myself? I'm a newbie as far as blogging goes and most anything else I do. Basically knowing enough to get myself into trouble. I'm a computer enthusiast, a Linux user, and a fan of open-source software that has a day job to pay the bills.
