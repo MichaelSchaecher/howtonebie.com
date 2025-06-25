@@ -1,5 +1,5 @@
 baseURL: "/"
-title: HowToNebie
+title: HOME
 languageCode: en
 defaultContentLanguage: en
 paginate: 10
@@ -43,7 +43,7 @@ params:
 
   # Set an image to be used as part of the listing of blogs and posts.
   images:
-    avatar: "https://images.pexels.com/photos/313690/pexels-photo-313690.jpeg"
+    avatar: "/images/logo.png"
     # favicon:
     # favicon_32:
     # favicon_16:
